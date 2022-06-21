@@ -105,4 +105,6 @@ function utils:GetExecutor()
     return exploit
 end
 
+log('info', 'Initialized.')
+
 return utils;
