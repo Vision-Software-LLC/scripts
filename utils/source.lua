@@ -40,7 +40,7 @@ utils.Stats = {
 }
 
 utils.RunService.RenderStepped:Connect(function (delta)
-  utils.Stats.FPS = math.floor(1 / delta)
+  utils.Stats.FPS = math.round(1 / delta)
 end)
 
 -- // Functions
