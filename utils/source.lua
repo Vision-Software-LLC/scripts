@@ -1,5 +1,8 @@
 local utils = {}
 
+-- // Verison
+utils.Version = '1.0.2'
+
 -- // Services
 utils.Players = game:GetService("Players")
 utils.ReplicatedStorage = game:GetService("ReplicatedStorage")
