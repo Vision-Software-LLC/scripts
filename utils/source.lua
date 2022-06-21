@@ -31,9 +31,31 @@ utils.Uptime = {
 
 
 utils.Stats = {
+    FPS = 60,
     Memory = math.round(game:GetService('Stats'):GetTotalMemoryUsageMb()),
     Ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), ' ')[1]))
 }
+
+coroutine.wrap(function()
+    local RunService = game:GetService("RunService")
+    local TimeFunction = RunService:IsRunning() and time or os.clock
+    
+    local LastIteration, Start
+    local FrameUpdateTable = {}
+    
+    local function HeartbeatUpdate()
+        LastIteration = TimeFunction()
+        for Index = #FrameUpdateTable, 1, -1 do
+            FrameUpdateTable[Index + 1] = FrameUpdateTable[Index] >= LastIteration - 1 and FrameUpdateTable[Index] or nil
+        end
+    
+        FrameUpdateTable[1] = LastIteration
+        utils.Stats.FPS = tostring(math.floor(TimeFunction() - Start >= 1 and #FrameUpdateTable or #FrameUpdateTable / (TimeFunction() - Start)))
+    end
+    
+    Start = TimeFunction()
+    local rFPS = RunService.Heartbeat:Connect(HeartbeatUpdate)
+end)()
 
 -- // Functions
 local function log(type, message)
@@ -83,4 +105,4 @@ function utils:GetExecutor()
     return exploit
 end
 
-return utils
+return utils;
