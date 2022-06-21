@@ -1,7 +1,7 @@
 local utils = {}
 
--- // Verison
-utils.Version = '1.0.2'
+-- // Version
+utils.Version = '1.1.0'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -39,26 +39,9 @@ utils.Stats = {
     Ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), ' ')[1]))
 }
 
-coroutine.wrap(function()
-    local RunService = game:GetService("RunService")
-    local TimeFunction = RunService:IsRunning() and time or os.clock
-    
-    local LastIteration, Start
-    local FrameUpdateTable = {}
-    
-    local function HeartbeatUpdate()
-        LastIteration = TimeFunction()
-        for Index = #FrameUpdateTable, 1, -1 do
-            FrameUpdateTable[Index + 1] = FrameUpdateTable[Index] >= LastIteration - 1 and FrameUpdateTable[Index] or nil
-        end
-    
-        FrameUpdateTable[1] = LastIteration
-        utils.Stats.FPS = tostring(math.floor(TimeFunction() - Start >= 1 and #FrameUpdateTable or #FrameUpdateTable / (TimeFunction() - Start)))
-    end
-    
-    Start = TimeFunction()
-    local rFPS = RunService.Heartbeat:Connect(HeartbeatUpdate)
-end)()
+utils.RunService.RenderStepped:Connect(function (delta)
+  utils.Stats.FPS = 1 / delta
+end)
 
 -- // Functions
 local function log(type, message)
