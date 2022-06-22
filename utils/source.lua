@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.1.2'
+utils.Version = '1.1.3'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -22,8 +22,9 @@ utils.Health = utils.Humanoid.Health
 utils.UserId = utils.Player.UserId
 utils.Mouse = utils.Player:GetMouse()
 utils.Displayname = utils.Player.DisplayName
-utils.Name = utils.Player.Name
+utils.Username = utils.Player.Name
 utils.Age = utils.Player.AccountAge
+utils.State = utils.Humanoid:GetState()
 utils.Uptime = {
     Days = math.floor( elapsedTime() / 86400 ),
     Hours = math.floor( elapsedTime() / 3600 ),
