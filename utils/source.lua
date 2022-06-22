@@ -71,7 +71,7 @@ function utils:Try(func, name, verbose)
     if not success and verbose then
         log("error", string.format('Function "%s" failed to run, Error: %s', name, err))
     elseif success and verbose then
-        log("info", string.format('Function "%s" ran successfully!", name))
+        log("info", string.format('Function "%s" ran successfully!', name))
     end
 end
 
