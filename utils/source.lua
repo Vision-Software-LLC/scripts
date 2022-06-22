@@ -42,7 +42,7 @@ utils.Stats = {
 
 utils.RunService.RenderStepped:Connect(function (delta)
   utils.Stats.FPS = math.round(1 / delta)
-  utils.Stats.Memory = math.round(game:GetService('Stats'):GetTotalMemoryUsageMb()),
+  utils.Stats.Memory = math.round(game:GetService('Stats'):GetTotalMemoryUsageMb())
   utils.Stats.Ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), ' ')[1]))
 end)
 
