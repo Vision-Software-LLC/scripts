@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.1.6'
+utils.Version = '1.1.7'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -69,9 +69,9 @@ end
 function utils:Try(func, name, verbose)
     local success, err = pcall(function() func() end)
     if not success and verbose then
-        log("error", string.format("%s failed to execute, Error: %s", name, err))
+        log("error", string.format('Function "%s" failed to run, Error: %s', name, err))
     elseif success and verbose then
-        log("info", string.format("%s successfully executed.", name))
+        log("info", string.format('Function "%s" ran successfully!", name))
     end
 end
 
