@@ -47,9 +47,9 @@ end)
 -- // Functions
 local function log(type, message)
     if type == "info" then
-        print("[Vision/Utils] INFO:" .. tostring(message))
+        print("[Vision/Utils] INFO: " .. tostring(message))
     elseif type == "warn" then
-        warn("[Vision/Utils] WARNING:" .. tostring(message))
+        warn("[Vision/Utils] WARNING: " .. tostring(message))
     elseif type == "error" then
         warn('[Vision/Utils] ERROR: ' .. tostring(message))
     end
@@ -57,7 +57,10 @@ end
 
 
 function utils:LoadURL(url)
-    local success, err = pcall( function() loadstring(game:HttpGet(url))() end)
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url))()
+    end)
+    
     if not success then
         log("error", err)
     end
