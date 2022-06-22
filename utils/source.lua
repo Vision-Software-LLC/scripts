@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.1.4'
+utils.Version = '1.1.5'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -47,9 +47,9 @@ end)
 -- // Functions
 local function log(type, message)
     if type == "info" then
-        print("[Vision/Utils] " .. tostring(message))
+        print("[Vision/Utils] INFO:" .. tostring(message))
     elseif type == "warn" then
-        warn("[Vision/Utils] " .. tostring(message))
+        warn("[Vision/Utils] WARNING:" .. tostring(message))
     elseif type == "error" then
         warn('[Vision/Utils] ERROR: ' .. tostring(message))
     end
