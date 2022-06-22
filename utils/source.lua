@@ -57,13 +57,7 @@ end
 
 
 function utils:LoadURL(url)
-    local success, err = pcall(function()
-       return loadstring(game:HttpGet(url))()
-    end)
-    
-    if not success then
-        log("error", err)
-    end
+    return loadstring(game:HttpGet(url))()
 end
 
 function utils:Try(func, name, verbose)
