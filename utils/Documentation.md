@@ -10,54 +10,62 @@ local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vision-
 utils.Players
 utils.ReplicatedStorage
 utils.RunService
-utils.UserInputService
 utils.TweenService
+utils.UserInputService
 
 --[[
 
 Players                  -- Players Service
 ReplicatedStorage        -- ReplicatedStorage Service
 RunService               -- RunService
-UserInputService         -- UserInputService
 TweenService             -- TweenService
+UserInputService         -- UserInputService
 
 --]]
 ```
 
 ## Variables
 ```lua
-utils.Player
-utils.Character
-utils.Humanoid
-utils.HRP
-utils.Camera
-utils.PlayerCount
-utils.FOV
-utils.Health
-utils.UserId
-utils.Mouse
-utils.Displayname
-utils.Name
 utils.Age
-utils.Uptime
+utils.Camera
+utils.Character
+utils.Displayname
+utils.FOV
+utils.HRP
+utils.Health
+utils.Humanoid
+utils.Mouse
+utils.Player
+utils.PlayerCount
+utils.State
 utils.Stats
+utils.Uptime
+utils.UserId
+utils.Username
 
 --[[
 
-Player                   -- LocalPlayer
-Character                -- LocalPlayer's Character
-Humanoid                 -- LocalPlayer's Humanoid
-HRP                      -- LocalPlayer's HumanoidRootPart
-Camera                   -- LocalPlayer's Camera
-PlayerCount              -- Number of players in your server
-FOV                      -- LocalPlayer's FOV
-Health                   -- LocalPlayer's Health
-UserId                   -- LocalPlayer's UserId
-Mouse                    -- LocalPlayer's Mouse
-Displayname              -- LocalPlayer's Displayname
-Name                     -- LocalPlayer's Name
 Age                      -- LocalPlayer's account age
+Camera                   -- LocalPlayer's Camera
+Character                -- LocalPlayer's Character
+Displayname              -- LocalPlayer's Displayname
+FOV                      -- LocalPlayer's FOV
+HRP                      -- LocalPlayer's HumanoidRootPart
+Health                   -- LocalPlayer's Health
+Humanoid                 -- LocalPlayer's Humanoid
+Mouse                    -- LocalPlayer's Mouse
+Name                     -- LocalPlayer's Name
+Player                   -- LocalPlayer
+PlayerCount              -- Number of players in your server
+State                    -- State of LocalPlayer's Humanoid (ex. Jumping)
+Stats                    -- Statistics Table
+                           {
+                               Stats.FPS         -- Client frames per second
+                               Stats.Memory      -- Client memory usage
+                               Stats.Ping        -- Client ping
+                           }                   
 Uptime                   -- Client Uptime Table
+UserId                   -- LocalPlayer's UserId
                            {
                                Uptime.Days       -- Client uptime in days
                                Uptime.Hours      -- Client uptime in hours
@@ -65,13 +73,7 @@ Uptime                   -- Client Uptime Table
                                Uptime.Seconds    -- Client uptime in seconds
                                Uptime.Formatted  -- Formatted client uptime.  E.g. 00  :  00  :   00   :  00
                            }                                                      Days  Hours  Minutes  Seconds
-                           
-Stats                    -- Statistics Table
-                           {
-                               Stats.FPS         -- Client frames per second
-                               Stats.Memory      -- Client memory usage
-                               Stats.Ping        -- Client ping
-                           }
+Username                 -- LocalPlayer's @Username
 
 --]]
 ```
