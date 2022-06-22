@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.1.8a'
+utils.Version = '1.1.8b'
 
 -- // Services
 utils.Players = game:GetService("Players")
