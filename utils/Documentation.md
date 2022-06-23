@@ -36,14 +36,18 @@ utils.FOV
 utils.HRP
 utils.Health
 utils.Humanoid
+utils.JumpPower
+utils.MaxHealth
 utils.Mouse
 utils.Player
 utils.PlayerCount
 utils.State
 utils.Stats
+utils.TeamColor
 utils.Uptime
 utils.UserId
 utils.Username
+utils.WalkSpeed
 
 --[[
 
@@ -55,6 +59,8 @@ FOV                      -- LocalPlayer's FOV
 HRP                      -- LocalPlayer's HumanoidRootPart
 Health                   -- LocalPlayer's Health
 Humanoid                 -- LocalPlayer's Humanoid
+JumpPower                -- LocalPlayer's JumpPower
+MaxHealth                -- LocalPlayer's MaxHealth
 Mouse                    -- LocalPlayer's Mouse
 Name                     -- LocalPlayer's Name
 Player                   -- LocalPlayer
@@ -76,12 +82,14 @@ UserId                   -- LocalPlayer's UserId
                                Uptime.Formatted  -- Formatted client uptime.  E.g. 00  :  00  :   00   :  00
                            }                                                      Days  Hours  Minutes  Seconds
 Username                 -- LocalPlayer's @Username
+Walkspeed                -- LocalPlayer's Walkspeed
 
 --]]
 ```
 
 ## Functions
 ```lua
+utils:FindCharacter(<string> name)
 utils:LoadUrl(<string> url)
 utils:Try(<function>, <string> name, <bool> verbose)
 utils:GetExecutor()
@@ -89,6 +97,7 @@ utils:FindObj(<string> name, <bool?> showall)
 
 --[[
 
+FindCharacter            -- Used to search for any object containing a humanoid. Returns object with humanoid matching input string.
 LoadUrl                  -- Used to load a script from a url
 Try                      -- Used for debugging functions. Will log according to the state of execution; Successful or failure.
 GetExecutor              -- Returns the current executor. 15 different possible executors that can be returned, if a executor is not in the list, it will return 'Undetectable'.
