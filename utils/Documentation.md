@@ -7,6 +7,7 @@ local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vision-
 
 ## Services
 ```lua
+utils.CoreGui
 utils.Players
 utils.ReplicatedStorage
 utils.RunService
@@ -15,6 +16,7 @@ utils.UserInputService
 
 --[[
 
+CoreGui                  -- CoreGui
 Players                  -- Players Service
 ReplicatedStorage        -- ReplicatedStorage Service
 RunService               -- RunService
