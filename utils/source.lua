@@ -26,6 +26,12 @@ utils.Displayname = utils.Player.DisplayName
 utils.Username = utils.Player.Name
 utils.Age = utils.Player.AccountAge
 utils.State = utils.Humanoid:GetState()
+utils.WalkSpeed = utils.Humanoid.WalkSpeed
+utils.JumpPower = utils.Humanoid.JumpPower
+utils.MaxHealth = utils.Humanoid.MaxHealth
+utils.Health = utils.Humanoid.Health
+utils.TeamColor = utils.Player.TeamColor
+
 utils.Uptime = {
     Days = math.floor( elapsedTime() / 86400 ),
     Hours = math.floor( elapsedTime() / 3600 ),
@@ -115,6 +121,18 @@ function utils:FindObj( name, showall )
             end
         end
         return found
+        end
+end
+
+function utils:FindCharacter( name )
+    local starttime = tick()
+    local v = game:FindFirstChild(name, true)
+        if v and v.Name == name and v.Humanoid then
+            local timetaken = string.sub((tick()) - (starttime), 1, 4)
+            log('info', 'Found character of "' .. name .. '" in ' .. timetaken .. ' ms.')
+            return v
+        else
+            return log('warn', 'Character not found: "' .. name .. '"')
         end
 end
 
