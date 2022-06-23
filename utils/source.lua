@@ -120,6 +120,4 @@ end
 
 log('info', 'Initialized.')
 
-print(unpack(utils:FindObj('DoMoNiCgt', true)))
-
---return utils;
+return utils;
