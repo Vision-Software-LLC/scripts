@@ -7,6 +7,7 @@ local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vision-
 
 ## Services
 ```lua
+utils.CoreGui
 utils.Players
 utils.ReplicatedStorage
 utils.RunService
@@ -15,6 +16,7 @@ utils.UserInputService
 
 --[[
 
+CoreGui                  -- CoreGui
 Players                  -- Players Service
 ReplicatedStorage        -- ReplicatedStorage Service
 RunService               -- RunService
@@ -80,15 +82,16 @@ Username                 -- LocalPlayer's @Username
 
 ## Functions
 ```lua
-utils:LoadURL(url)
-utils:Try(function, name, verbose)
+utils:LoadUrl(<string> url)
+utils:Try(<function>, <string> name, <bool> verbose)
 utils:GetExecutor()
+utils:FindObj(<string> name, <bool?> showall)
 
 --[[
 
-LoadURL                  -- Used to load a script from a url
+LoadUrl                  -- Used to load a script from a url
 Try                      -- Used for debugging functions. Will log according to the state of execution; Successful or failure.
 GetExecutor              -- Returns the current executor. 15 different possible executors that can be returned, if a executor is not in the list, it will return 'Undetectable'.
-
+FindObj                  -- Returns the first Instance matching name. If showall is true, returns a table of instances matching name within workspace, ReplicatedStorage, and CoreGui.
 --]]
 ```
