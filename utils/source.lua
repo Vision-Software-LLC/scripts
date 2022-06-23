@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.4.1-beta'
+utils.Version = '1.4.1a-beta'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -82,7 +82,7 @@ utils.RunService.RenderStepped:Connect(function (delta)
     utils.Health = utils.Humanoid.Health
     utils.TeamColor = utils.Player.TeamColor
     -- // Uptime Refresh
-    utils.Uptime.Days = Days = math.floor( elapsedTime() / 86400 )
+    utils.Uptime.Days = math.floor( elapsedTime() / 86400 )
     utils.Uptime.Hours = math.floor( elapsedTime() / 3600 )
     utils.Uptime.Minutes = math.floor( elapsedTime() / 60 )
     utils.Uptime.Seconds = math.floor( elapsedTime() )
