@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.5.0-beta'
+utils.Version = '1.5.0a-beta'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -204,6 +204,6 @@ function utils:FindCharacter( name )
         end
 end
 
-log('info', 'Initialized.')
+if not getgenv().visionlive then log('info', 'Initialized.') end
 
 return utils;
