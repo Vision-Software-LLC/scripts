@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.5.0-beta'
+utils.Version = '1.5.0a-beta'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -60,7 +60,7 @@ utils.Icons = {
 		Informational = "rbxassetid://9838877673",
 		Custom = "rbxassetid://9838878267"
 	},
-	VisionLogo = "rbxassetid://9795408363"
+	VisionLogo = "rbxassetid://10006089373"
 }
 
 
