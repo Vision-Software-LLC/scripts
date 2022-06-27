@@ -204,6 +204,26 @@ function utils:FindCharacter( name )
         end
 end
 
+-- This may be completely useless, but I'm leaving it here for now.
+-- Also, it's not even really finished.
+function utils:Tree()
+    local workspaceChildren = workspace:GetChildren()
+    local output
+    if #workspace:GetChildren() == 0 then output = "- Workspace" else output = "V Workspace" end
+    for i = 1, #workspaceChildren do
+        local prefix = "V"
+        if #workspaceChildren[i]:GetChildren() == 0 then prefix = "-" end
+        output = output .. '\n \t ' .. prefix .. ' ' .. workspaceChildren[i].Name
+        for _,v in ipairs(workspaceChildren[i]:GetChildren()) do
+            local prefix = ">"
+            if #v:GetChildren() == 0 then prefix = "-" else prefix = "V" end
+            output = output .. "\n" .. "\t\t " .. prefix .. ' ' .. v.Name
+        end
+    end
+    return output
+end
+
+
 if not getgenv().visionlive then log('info', 'Initialized.') end
 
 return utils;
