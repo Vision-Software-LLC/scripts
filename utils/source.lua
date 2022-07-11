@@ -19,18 +19,19 @@ utils.Camera = workspace.CurrentCamera
 utils.CoreGui = game:GetService("CoreGui")
 utils.PlayerCount = tostring(#utils.Players:GetPlayers())
 utils.FOV = utils.Camera.FieldOfView
-utils.Health = utils.Humanoid.Health
 utils.UserId = utils.Player.UserId
 utils.Mouse = utils.Player:GetMouse()
 utils.Displayname = utils.Player.DisplayName
 utils.Username = utils.Player.Name
 utils.Age = utils.Player.AccountAge
-utils.State = utils.Humanoid:GetState()
-utils.WalkSpeed = utils.Humanoid.WalkSpeed
-utils.JumpPower = utils.Humanoid.JumpPower
-utils.MaxHealth = utils.Humanoid.MaxHealth
-utils.Health = utils.Humanoid.Health
 utils.TeamColor = utils.Player.TeamColor
+if utils.Humanoid ~= nil then
+    utils.Health = utils.Humanoid.Health
+    utils.State = utils.Humanoid:GetState()
+    utils.WalkSpeed = utils.Humanoid.WalkSpeed
+    utils.JumpPower = utils.Humanoid.JumpPower
+    utils.MaxHealth = utils.Humanoid.MaxHealth
+end
 
 utils.Icons = {
     FluentIcons = {
@@ -84,15 +85,12 @@ utils.RunService.RenderStepped:Connect(function (delta)
     utils.Stats.FPS = math.round(1 / delta)
     utils.Stats.Memory = math.round(game:GetService('Stats'):GetTotalMemoryUsageMb())
     utils.Stats.Ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), ' ')[1]))
-        
-    -- // Services Refresh
-    utils.Players = game:GetService("Players")
-    utils.ReplicatedStorage = game:GetService("ReplicatedStorage")
-    utils.RunService = game:GetService("RunService")
-    utils.UserInputService = game:GetService("UserInputService")
-    utils.TweenService = game:GetService("TweenService")
 
-    -- // Variables Refresh
+end)
+
+task.spawn(function()
+    while task.wait() do
+        -- // Variables Refresh
     utils.Player = utils.Players.LocalPlayer
     utils.Character = utils.Player.Character
     utils.Humanoid = utils.Character:FindFirstChildWhichIsA("Humanoid")
@@ -101,24 +99,26 @@ utils.RunService.RenderStepped:Connect(function (delta)
     utils.CoreGui = game:GetService("CoreGui")
     utils.PlayerCount = tostring(#utils.Players:GetPlayers())
     utils.FOV = utils.Camera.FieldOfView
-    utils.Health = utils.Humanoid.Health
     utils.UserId = utils.Player.UserId
     utils.Mouse = utils.Player:GetMouse()
     utils.Displayname = utils.Player.DisplayName
     utils.Username = utils.Player.Name
     utils.Age = utils.Player.AccountAge
-    utils.State = utils.Humanoid:GetState()
-    utils.WalkSpeed = utils.Humanoid.WalkSpeed
-    utils.JumpPower = utils.Humanoid.JumpPower
-    utils.MaxHealth = utils.Humanoid.MaxHealth
-    utils.Health = utils.Humanoid.Health
     utils.TeamColor = utils.Player.TeamColor
+    if utils.Humanoid ~= nil then
+        utils.Health = utils.Humanoid.Health
+        utils.State = utils.Humanoid:GetState()
+        utils.WalkSpeed = utils.Humanoid.WalkSpeed
+        utils.JumpPower = utils.Humanoid.JumpPower
+        utils.MaxHealth = utils.Humanoid.MaxHealth
+    end
     -- // Uptime Refresh
     utils.Uptime.Days = math.floor( elapsedTime() / 86400 )
     utils.Uptime.Hours = math.floor( elapsedTime() / 3600 )
     utils.Uptime.Minutes = math.floor( elapsedTime() / 60 )
     utils.Uptime.Seconds = math.floor( elapsedTime() )
     utils.Uptime.Formatted = string.format( "%02dd:%02dh:%02dm:%02ds", math.floor( elapsedTime() / 86400 % 24 ),  math.floor( elapsedTime() / 3600 % 60 ), math.floor( elapsedTime() / 60 % 60 ), math.floor( elapsedTime() % 60 ) )
+    end
 end)
 
 -- // Functions
