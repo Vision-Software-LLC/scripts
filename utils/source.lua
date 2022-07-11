@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.6.1-beta'
+utils.Version = '1.6.2-beta'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -224,6 +224,6 @@ function utils:Tree()
 end
 
 
-if not getgenv().visionlive then log('info', 'Initialized.') end
+if not getgenv().visionlive then log('info', 'Initialized Version ' .. utils.Version) end
 
 return utils;
