@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.6.0-beta'
+utils.Version = '1.6.1-beta'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -95,7 +95,7 @@ utils.RunService.RenderStepped:Connect(function (delta)
     -- // Variables Refresh
     utils.Player = utils.Players.LocalPlayer
     utils.Character = utils.Player.Character
-    utils.Humanoid = utils.Character:FindFirstChild("Humanoid")
+    utils.Humanoid = utils.Character:FindFirstChildWhichIsA("Humanoid")
     utils.HRP = utils.Character:FindFirstChild("HumanoidRootPart")
     utils.Camera = workspace.CurrentCamera
     utils.CoreGui = game:GetService("CoreGui")
