@@ -4,9 +4,10 @@
 ```lua
 local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vision-Software-LLC/scripts/main/utils/source.lua"))()
 ```
-# Loading The Beta Module
+### Loading The Beta Module
 ```lua
 local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vision-Software-LLC/scripts/main/utils/beta.lua"))()
+utils:Init()
 ```
 NOTICE: The beta is not reccommended if you don't know what you're doing.
 
