@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '2.0.0-beta'
+utils.Version = '2.1.0-beta'
 
 local function log( type, message )
     if type == "info" then
