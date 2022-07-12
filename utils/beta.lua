@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '2.1.0-beta'
+utils.Version = '2.2.0-beta'
 
 local function log( type, message )
     if type == "info" then
@@ -17,6 +17,7 @@ function utils:Init( Options )
 Options.LoadServices = Options.LoadServices or true
 Options.LoadVars = Options.LoadVars or true
 Options.LoadFuncs = Options.LoadFuncs or true
+Options.Icon = Options.Icon or true
 if getgenv().visionlive then return log('error', 'Utils already loaded!') end
 
 -- // Services
@@ -51,38 +52,6 @@ if LoadVars then
         utils.JumpPower = utils.Humanoid.JumpPower
         utils.MaxHealth = utils.Humanoid.MaxHealth
     end
-
-    utils.Icons = {
-        FluentIcons = {
-            Home = "rbxassetid://9792462652",
-            Aimbot = "rbxassetid://9766671041",
-            Visuals = "rbxassetid://9766673555",
-            Player = "rbxassetid://9766672602",
-            Misc = "rbxassetid://9766671943",
-            Settings = "rbxassetid://9766674082",
-            Credits = "rbxassetid://9766675093",
-            Exit = "rbxassetid://9766676906"
-        },
-        FeatherIcons = {
-            Home = "rbxassetid://9792650361",
-            Aimbot = "rbxassetid://9792632523",
-            Visuals = "rbxassetid://9792631281",
-            Player = "rbxassetid://9792631906",
-            Misc = "rbxassetid://9792634811",
-            Settings = "rbxassetid://9792633222",
-            Credits = "rbxassetid://9792634075",
-            Exit = "rbxassetid://9792635572"
-        },
-        NotificationIcons = {
-            Success = "rbxassetid://9838874163",
-            Warning = "rbxassetid://9838873385",
-            Error = "rbxassetid://9838876113",
-            Informational = "rbxassetid://9838877673",
-            Custom = "rbxassetid://9838878267"
-        },
-        VisionLogo = "rbxassetid://10006089373"
-    }
-
 
     utils.Uptime = {
         Days = math.floor( elapsedTime() / 86400 ),
@@ -233,6 +202,39 @@ if LoadFuncs then
         end
         return output
     end
+end
+
+if Icon then
+    utils.Icons = {
+        FluentIcons = {
+            Home = "rbxassetid://9792462652",
+            Aimbot = "rbxassetid://9766671041",
+            Visuals = "rbxassetid://9766673555",
+            Player = "rbxassetid://9766672602",
+            Misc = "rbxassetid://9766671943",
+            Settings = "rbxassetid://9766674082",
+            Credits = "rbxassetid://9766675093",
+            Exit = "rbxassetid://9766676906"
+        },
+        FeatherIcons = {
+            Home = "rbxassetid://9792650361",
+            Aimbot = "rbxassetid://9792632523",
+            Visuals = "rbxassetid://9792631281",
+            Player = "rbxassetid://9792631906",
+            Misc = "rbxassetid://9792634811",
+            Settings = "rbxassetid://9792633222",
+            Credits = "rbxassetid://9792634075",
+            Exit = "rbxassetid://9792635572"
+        },
+        NotificationIcons = {
+            Success = "rbxassetid://9838874163",
+            Warning = "rbxassetid://9838873385",
+            Error = "rbxassetid://9838876113",
+            Informational = "rbxassetid://9838877673",
+            Custom = "rbxassetid://9838878267"
+        },
+        VisionLogo = "rbxassetid://10006089373"
+    }
 end
 
 log('info', 'Initialized Version ' .. utils.Version)
