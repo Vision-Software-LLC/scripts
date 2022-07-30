@@ -1,7 +1,7 @@
 local utils = {}
 
 -- // Version
-utils.Version = '1.6.2'
+utils.Version = '1.6.2b'
 
 -- // Services
 utils.Players = game:GetService("Players")
@@ -134,7 +134,7 @@ end
 
 
 function utils:LoadUrl( url )
-    return loadstring(game:HttpGet(url))()
+    return loadstring(game:HttpGetAsync(url))()
 end
 
 function utils:Try( func, name, verbose )
