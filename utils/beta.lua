@@ -1,3 +1,9 @@
+--[[
+    WARNING: THIS IS A BETA VERSION OF THE SCRIPT. DO NOT USE UNLESS YOU ARE SURE YOU KNOW WHAT YOU ARE DOING.
+    This script is also not synced with the stable version, and may be missing features. It is unclear at this point if it will receive updates.
+]]--
+
+
 local utils = {}
 
 -- // Version
