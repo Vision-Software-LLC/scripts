@@ -8,7 +8,7 @@
 ]]--
 repeat task.wait() until game:isLoaded() -- This is not really required unless the script will be in autoexecute
 
-print("Open-Source Script by Vision Software - discord.gg/vision-hub")
+print("Open-Source Script by Vision Software - discord.gg/visionhub")
 
 -- // Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
