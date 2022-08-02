@@ -4,7 +4,7 @@
     Feel free to utilize the methods shown in this script for your own work!
 
     Made by: Dosage#9999
-    Brought to you by: Vision Software - discord.gg/vision-hub  https://visionhub.dev
+    Brought to you by: Vision Software - discord.gg/visionhub  https://visionhub.dev
 ]]--
 repeat task.wait() until game:isLoaded() -- This is not really required unless the script will be in autoexecute
 
