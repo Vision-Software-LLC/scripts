@@ -12,8 +12,14 @@ local username = Instance.new("TextLabel")
 --Properties:
 
 HUD.Name = "HUD"
-if syn then syn.protect_gui(HUD) warn( '[Vision] GUI Protected by Synapse X' ) end
-HUD.Parent = game:GetService("CoreGui")
+if syn and syn.protect_gui then
+    syn.protect_gui(HUD) warn( '[Vision] GUI Protected by Synapse X' )
+end
+if gethui then
+    HUD.Parent = gethui() warn( string.format('[Vision] GUI Protected by %s', identifyexecutor()) )
+else
+    HUD.Parent = game:GetService("CoreGui")
+end
 HUD.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 main.Name = "main"
