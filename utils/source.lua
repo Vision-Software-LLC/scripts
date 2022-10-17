@@ -12,7 +12,7 @@ utils.TweenService = game:GetService("TweenService")
 
 -- // Variables
 utils.Player = utils.Players.LocalPlayer
-utils.Character = utils.Player:WaitForChild("Character")
+utils.Character = utils.Player.Character
 utils.Humanoid = utils.Character:FindFirstChild("Humanoid")
 utils.HRP = utils.Character:FindFirstChild("HumanoidRootPart")
 utils.Camera = workspace.CurrentCamera or workspace:FindFirstChildWhichIsA("Camera")
