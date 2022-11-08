@@ -1,0 +1,6 @@
+_G.wl_key = ...
+
+local success, err = pcall(function() loadstring(game:HttpGet("https://visionhub.dev/script.lua"))() end)
+if not success then
+    warn('[Vision] Error: ' .. err)
+end
